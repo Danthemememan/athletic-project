@@ -11,7 +11,7 @@ with open ('results.csv', encoding="utf8") as f:
         # print(event)
         if event == "110M Hurdles Men": #if the event is "triple jump women" then print the things below it
             print("event")
-           
+            distance = partsofline[7]
             if distance != "None":
                 
                 distancenumber = float(distance) 
@@ -22,13 +22,13 @@ with open ('results.csv', encoding="utf8") as f:
                 print(partsofline[1])
                 date = partsofline[3] 
                 datenumber = int(date)
-                if distance != "None":
+               
 
-                    listofx.append(datenumber)
-                    print('date is: ', date)
-                    # print(partsofline[3])
-                    # print(partsofline[7])
-                    distance = partsofline[7]
+                listofx.append(datenumber)
+                print('date is: ', date)
+                # print(partsofline[3])
+                # print(partsofline[7])
+                distance = partsofline[7]
 
                     
 import plotly.express as px  
