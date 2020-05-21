@@ -34,6 +34,6 @@ with open ('results.csv', encoding="utf8") as f:
 import plotly.express as px  
 fig = px.scatter(x=listofx, y=listofy, trendline="ols" )       
 fig.show() 
-
+fig.write_html("100M.html")
 
 
