@@ -1,5 +1,8 @@
 listofx = []
 listofy = []
+
+event_want = 'Discus Throw Men'
+
 with open ('results.csv', encoding="utf8") as f:
     for l in f.readlines():
         l = l.strip() # this thing gets rid of the new line character at the end of each line
@@ -9,7 +12,7 @@ with open ('results.csv', encoding="utf8") as f:
         
         event = partsofline[1] # finds the 1st (second) bit fo the list and labels it "event"
         # print(event)
-        if event == "110M Hurdles Men": #if the event is "triple jump women" then print the things below it
+        if event == event_want: #if the event is "triple jump women" then print the things below it
             print("event")
             distance = partsofline[7]
             if distance != "None":
@@ -34,6 +37,8 @@ with open ('results.csv', encoding="utf8") as f:
 import plotly.express as px  
 fig = px.scatter(x=listofx, y=listofy, trendline="ols" )       
 fig.show() 
-fig.write_html("100M.html")
+
+filename = event_want.replace(' ', '_') + '.html'
+fig.write_html(filename)
 
 
